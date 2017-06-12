@@ -17,9 +17,10 @@ app.prepare()
   server.get('*', (req, res) => {
     return handle(req, res)
   })
+  var port = parseInt(process.env.PORT) || 3000;
 
-  server.listen(3000, (err) => {
+  server.listen(port, (err) => {
     if (err) throw err
-    console.log('> Ready on http://localhost:3000')
+    console.log('> Ready on http://localhost:' + port)
   })
 })
