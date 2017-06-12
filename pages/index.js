@@ -9,6 +9,7 @@ class LoginForm extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
   componentWillMount() {
+    console.log(this.props.serverMode)
     if(!this.props.serverMode) {
       let auth = new Authentication()
       console.log(auth.isLoggedIn())
