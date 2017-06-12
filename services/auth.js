@@ -5,7 +5,7 @@ export default class Authentication {
   async login(username, password) {
     let reqBody = JSON.stringify({auth: {email: username, password: password}})
     let headers = {"Content-Type": "application/json"}
-    return fetch('http://localhost:4000/user_token', 
+    return fetch(BACKEND_URL + "user_token",
       {method: 'POST', body: reqBody, headers: headers}
     ).then(response => response.json())
   }
